@@ -18,7 +18,7 @@ class PokeSpiderSpider(scrapy.Spider):
     def parse_page(self, response):
         # Extraire les données des pages de produits
         yield {'name' : response.css('h1.product_title::text').get(),
-        'price' : response.css('.price span::text').get(),
+        'price' : response.css('.price span.woocommerce-Price-amount.amount::text').get(),
         'description' : response.css('div.woocommerce-Tabs-panel p::text').get(),
         'stock' : response.css(' .stock::text').get(),
         'sku' : response.css('.sku::text').get(),
