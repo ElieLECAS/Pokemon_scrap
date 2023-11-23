@@ -46,7 +46,7 @@ class SaveToSQLitePipeline:
         self.cur = self.conn.cursor()
 
         self.cur.execute("""
-        CREATE TABLE IF NOT EXISTS books(
+        CREATE TABLE IF NOT EXISTS pokemon(
             id int NOT NULL auto_increment,
             name text,
             price DECIMAL,
@@ -58,6 +58,34 @@ class SaveToSQLitePipeline:
             weight DECIMAL,
             height INTEGER,
             length INTEGER,
-            width INTEGER,
+            width INTEGER
         )
 """)
+    
+    def process_item(self,item,spider):
+        self.cur.execute(""" insert into pokemon()
+            name,
+            price,
+            description,
+            stock,
+            sku,
+            categories,
+            tags,
+            weight,
+            height,
+            length,
+            width
+            ) values (
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,        
+                ?,
+                ?,
+                ?
+            )""",
+            )
