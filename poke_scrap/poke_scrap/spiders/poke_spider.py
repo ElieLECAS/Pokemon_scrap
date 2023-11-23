@@ -7,6 +7,12 @@ class PokeSpiderSpider(scrapy.Spider):
     allowed_domains = ['scrapeme.live']
     start_urls = ['https://scrapeme.live/shop/page/1']
 
+    custom_settings = {
+        'FEEDS' : {
+            'pokedex.json': {'format':'json', 'overwrite': True},
+        }
+    }
+
     def parse(self, response):
         product_links = response.xpath('//ul[contains(@class, "products")]/li/a[1]/@href').getall()
         for link in product_links:

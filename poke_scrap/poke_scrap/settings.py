@@ -12,6 +12,10 @@ BOT_NAME = 'poke_scrap'
 SPIDER_MODULES = ['poke_scrap.spiders']
 NEWSPIDER_MODULE = 'poke_scrap.spiders'
 
+FEEDS = {
+    'pokedex.json' : {'format':"json"}
+}
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'poke_scrap (+http://www.yourdomain.com)'

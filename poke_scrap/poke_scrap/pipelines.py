@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import sqlite3
 
 
 class PokeScrapPipeline:
@@ -31,3 +32,32 @@ class PokeScrapPipeline:
             adapter[i] = float(value)
 
         return item
+
+class SaveToSQLitePipeline:
+
+    def __init__(self):
+        self.conn = sqlite3.connect(
+            host = "localhost",
+            user = 'root',
+            password = '',
+            database = 'books'
+        )
+
+        self.cur = self.conn.cursor()
+
+        self.cur.execute("""
+        CREATE TABLE IF NOT EXISTS books(
+            id int NOT NULL auto_increment,
+            name text,
+            price DECIMAL,
+            description text,
+            stock INTEGER,
+            sku INTEGER,
+            categories text,
+            tags text,
+            weight DECIMAL,
+            height INTEGER,
+            length INTEGER,
+            width INTEGER,
+        )
+""")
