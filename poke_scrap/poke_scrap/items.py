@@ -6,13 +6,16 @@
 import scrapy
 
 
-# class PokeScrapItem(scrapy.Item):
-#     name = scrapy.Field()    
-#     price = scrapy.Field()
-#     description = scrapy.Field()
-#     stock = scrapy.Field()
-#     tags = scrapy.Field()
-#     categories = scrapy.Field()
-#     weight = scrapy.Field()
-#     dimensions = scrapy.Field()
+class PokeScrapItem(scrapy.Item):
+    name = scrapy.Field()    
+    price = scrapy.Field()
+    description = scrapy.Field()
+    stock = scrapy.Field()
+    sku = scrapy.Field()
+    categories = scrapy.Field()
+    tags = scrapy.Field()
+    weight = scrapy.Field()
+    height = scrapy.Field()
+    length = scrapy.Field()
+    width = scrapy.Field()
 
