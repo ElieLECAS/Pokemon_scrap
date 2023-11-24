@@ -16,6 +16,10 @@ FEEDS = {
     'pokedex.json' : {'format':"json"}
 }
 
+# settings.py
+DB_PATH = 'your_database_path.db'
+
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'poke_scrap (+http://www.yourdomain.com)'
@@ -68,6 +72,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'poke_scrap.pipelines.PokeScrapPipeline': 300,
+   'poke_scrap.pipelines.SaveToSQLitePipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
