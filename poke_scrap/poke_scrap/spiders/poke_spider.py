@@ -41,19 +41,6 @@ class PokeSpiderSpider(scrapy.Spider):
             if match:
                 height, length, width = match.groups()
 
-        # yield {'name' : response.css('h1.product_title::text').get(),
-        # 'price' : response.css('.price span.woocommerce-Price-amount.amount::text').get(),
-        # 'description' : response.css('div.woocommerce-Tabs-panel p::text').get(),
-        # 'stock' : stock_divise,
-        # 'sku' : response.css('.sku::text').get(),
-        # 'categories' : response.css('.posted_in a::text').getall(),
-        # 'tags' : response.css('.tagged_as a::text').getall(),
-        # 'weight' : weight_divise,
-        # 'height' : height,
-        # 'length' : length,
-        # 'width' : width}
-
-
         poke_scrap_item = PokeScrapItem()
 
         poke_scrap_item['name'] = response.css('h1.product_title::text').get()

@@ -17,7 +17,7 @@ FEEDS = {
 }
 
 # settings.py
-DB_PATH = 'your_database_path.db'
+DB_PATH = 'pokedex_db.db'
 
 
 
@@ -73,6 +73,10 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
    'poke_scrap.pipelines.PokeScrapPipeline': 300,
    'poke_scrap.pipelines.SaveToSQLitePipeline': 400,
+}
+
+DB_SETTINGS = {
+    'database': 'pokedex_db.db',
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
