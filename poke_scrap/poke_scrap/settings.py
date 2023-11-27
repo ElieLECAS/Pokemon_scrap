@@ -78,6 +78,7 @@ ITEM_PIPELINES = {
 DB_SETTINGS = {
     'database': 'pokedex_db.db',
 }
+DB_NAME = 'pokedex.db'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
